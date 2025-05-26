@@ -1,23 +1,20 @@
 <template>
-  <h1>Hello {{ nam }} {{ act }}</h1>
-  <ul>
-    <li v-for="(stude, i) in st" :key="i">{{ stude }}</li>
-  </ul>
-  <button @click="delet">click</button>
-  <button @click="activ != activ">act</button>
+  <h1>activ daat is {{ name }}</h1>
+  <slot name="slotName"></slot>
+  <button @click="update">Change</button>
 </template>
+
 <script>
 export default {
   data() {
     return {
-      data: this.st,
       activ: this.act,
     };
   },
-  props: ["st", "nam", "act"],
+  props: ["name"],
   methods: {
-    delet() {
-      this.data.pop();
+    update() {
+      this.$emit("update", "zizo");
     },
   },
 };
