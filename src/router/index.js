@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import prfile from "../views/Profile.vue";
+import page2 from "../views/Page 2.vue";
+import Notfound from "../views/NotFound.vue";
 const routes = [
   {
     path: "/",
@@ -10,14 +12,34 @@ const routes = [
       title: "Home",
       description: "this is St",
     },
+    children: [
+      {
+        path: "/prfile",
+        name: "prfile",
+        component: prfile,
+        meta: {
+          title: "Prfile",
+          description: "this is prfile",
+        },
+      },
+      {
+        path: "/page2",
+        name: "two",
+        component: page2,
+        meta: {
+          title: "page2",
+          description: "this is prfile",
+        },
+      },
+    ],
   },
   {
-    path: "/prfile:/id/desc/title",
-    name: "prfile",
-    component: prfile,
+    path: "/:pathMatch(.*)*",
+    name: "notfound",
+    component: Notfound,
     meta: {
-      title: "Prfile",
-      description: "this is prfile",
+      title: "Notfound",
+      description: "this is Notfound page",
     },
   },
 ];
