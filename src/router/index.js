@@ -1,23 +1,23 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
-import prfile from "../views/Profile.vue";
+import Watch from "../views/Watchers.vue";
+import Prov from "../views/Provied.vue";
 const routes = [
   {
     path: "/",
     name: "home",
-    component: Home,
+    component: Watch,
     meta: {
       title: "Home",
       description: "this is St",
     },
   },
   {
-    path: "/prfile:/id/desc/title",
-    name: "prfile",
-    component: prfile,
+    path: "/prov",
+    name: "provide",
+    component: Prov,
     meta: {
-      title: "Prfile",
-      description: "this is prfile",
+      title: "Prov",
+      description: "this is St",
     },
   },
 ];
